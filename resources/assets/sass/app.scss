@@ -68,6 +68,15 @@ p {
   }
 }
 
+
+#logout {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+
 /* footer */
 
 footer {
@@ -174,4 +183,23 @@ input {
     float: none;
     max-width: 100px;
   }
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
 }
