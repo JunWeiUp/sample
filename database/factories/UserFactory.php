@@ -12,7 +12,6 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-
 $factory->define(App\Models\User::class, function (Faker $faker) {
     $date_time = $faker->date . ' ' . $faker->time;
     static $password;
@@ -20,7 +19,9 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
-        'password' => $password ?: $password = bcrypt('f'),
+        'is_admin' => false,
+        'activated' => false,
+        'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
         'created_at' => $date_time,
         'updated_at' => $date_time,
